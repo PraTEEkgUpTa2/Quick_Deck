@@ -1,6 +1,8 @@
-"use client";
 
-import { useState } from "react";
+"use client";
+export const dynamic = "force-dynamic";
+
+import { useState, useEffect } from "react";
 import { TextInput } from "@/components/text-input";
 import { SlidePreview } from "@/components/slide-preview";
 import { UserRoleSelector } from "@/components/user-role-selector";
@@ -25,9 +27,11 @@ export default function DeckGenerator() {
   const router = useRouter()
   const [user] = useAuthState(auth);
 
-  if(!user){
-    router.push('/')
-  }
+  useEffect(() => {
+    if (user === null) {
+      router.push('/');
+    }
+  }, [user]);
 
   const handleGenerate = async () => {
     if (!text.trim()) {
