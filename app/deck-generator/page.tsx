@@ -11,14 +11,23 @@ import { useToast } from "@/hooks/use-toast";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slide, UserRole } from "@/lib/types";
 import { generateDeckFromText } from "@/lib/deck-service";
+import {useAuthState} from "react-firebase-hooks/auth"
+import {auth} from "../firebase/config"
+import { useRouter } from "next/navigation";
 
-export function DeckGenerator() {
+export default function DeckGenerator() {
   const [text, setText] = useState("");
   const [role, setRole] = useState<UserRole>("professional");
   const [slides, setSlides] = useState<Slide[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [activeView, setActiveView] = useState<"input" | "preview">("input");
   const { toast } = useToast();
+  const router = useRouter()
+  const [user] = useAuthState(auth);
+
+  if(!user){
+    router.push('/')
+  }
 
   const handleGenerate = async () => {
     if (!text.trim()) {

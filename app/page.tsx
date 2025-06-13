@@ -1,17 +1,19 @@
-import { DeckGenerator } from '@/components/deck-generator';
+
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Logo } from '@/components/logo';
 
+import Navbar from '@/components/navbar';
+import Heading from '@/components/heading';
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <header className="flex items-center justify-between mb-8">
-          <Logo />
-          <ThemeToggle />
-        </header>
-        <DeckGenerator />
+    
+    <div className="min-h-full flex flex-col" >
+    <div className="flex flex-col items-center justify-center md:justify-start text-center gap-y-8 flex-1 px-6 pb-10">
+        
+        <Heading />
+        </div>
       </div>
-    </main>
+    
   );
 }

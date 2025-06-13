@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
+import Navbar from '@/components/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,7 +26,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className=' dark:bg-[#1F1F1F]'>
+        <Navbar />
+          <main className='h-full pt-10'>
+             {children} 
+          </main>
+    </div>
           <Toaster />
         </ThemeProvider>
       </body>
