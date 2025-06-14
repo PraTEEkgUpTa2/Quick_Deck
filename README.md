@@ -17,9 +17,9 @@ QuickDeck is a modern web application that allows users to generate presentation
 
 ## 📸 Screenshots
 
-![QuickDeck Input Page](./public/screenshots/input.png)
-![Slide Preview](./public/screenshots/preview.png)
-![Auth Modal](./public/screenshots/auth.png)
+![QuickDeck Input Page](https://github.com/user-attachments/assets/58d66297-5e34-4ae8-a632-d2f8c0a23314)
+
+![Slide Preview](https://github.com/user-attachments/assets/309a4c84-01b2-4337-9fd4-85cbcd54348e)
 
 ---
 
